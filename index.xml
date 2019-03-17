@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akash Shakdwipeea</title>
+    <link>https://shakdwipeea.github.io/</link>
+    <description>Recent content on Akash Shakdwipeea</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://shakdwipeea.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clojure setup</title>
+      <link>https://shakdwipeea.github.io/posts/clojure-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shakdwipeea.github.io/posts/clojure-setup/</guid>
+      <description>I will try to explain my process of setting up a clojure dev setup.
+Setting up emacs For ideal dev experience, you want to be able interact with the running clojure process from your editor. This is done through a repl process.
+Here is my emacs init config. It uses cider and bunch of stuff to my dev experience good. Some of them work, some of them don&#39;t ://.
+A playground project I have setup a minimal playground project https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

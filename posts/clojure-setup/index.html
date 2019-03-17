@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Akash Shakdwipeea  | Clojure setup</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Clojure setup" />
+<meta property="og:description" content="I will try to explain my process of setting up a clojure dev setup.
+Setting up emacs For ideal dev experience, you want to be able interact with the running clojure process from your editor. This is done through a repl process.
+Here is my emacs init config. It uses cider and bunch of stuff to my dev experience good. Some of them work, some of them don&#39;t ://.
+A playground project I have setup a minimal playground project https://github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shakdwipeea.github.io/posts/clojure-setup/" />
+
+
+<meta itemprop="name" content="Clojure setup">
+<meta itemprop="description" content="I will try to explain my process of setting up a clojure dev setup.
+Setting up emacs For ideal dev experience, you want to be able interact with the running clojure process from your editor. This is done through a repl process.
+Here is my emacs init config. It uses cider and bunch of stuff to my dev experience good. Some of them work, some of them don&#39;t ://.
+A playground project I have setup a minimal playground project https://github.">
+
+
+
+<meta itemprop="wordCount" content="609">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Clojure setup"/>
+<meta name="twitter:description" content="I will try to explain my process of setting up a clojure dev setup.
+Setting up emacs For ideal dev experience, you want to be able interact with the running clojure process from your editor. This is done through a repl process.
+Here is my emacs init config. It uses cider and bunch of stuff to my dev experience good. Some of them work, some of them don&#39;t ://.
+A playground project I have setup a minimal playground project https://github."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://shakdwipeea.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Akash Shakdwipeea
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Clojure setup</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="0001-01-01T00:00:00Z">January 1, 0001</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I will try to explain my process of setting up a clojure dev setup.</p>
+
+<h2 id="setting-up-emacs">Setting up emacs</h2>
+
+<p>For ideal dev experience, you want to be able interact with the running clojure
+process from your editor. This is done through a repl process.</p>
+
+<p><a href="https://gist.github.com/shakdwipeea/17bd7921391855a4f7933331826b3c53'" title="Here">Here</a> is my emacs init config. It uses cider and bunch of stuff to my dev experience 
+good. Some of them work, some of them don't ://.</p>
+
+<h2 id="a-playground-project">A playground project</h2>
+
+<p>I have setup a minimal playground project https://github.com/shakdwipeea/clj-minimal-playground for 
+playing around with clojure.</p>
+
+<p>Clone the project and run <code>clj -m user.core</code> command in the terminal. This will start a new nrepl 
+server. Now we want to hook up our emacs to the repl. For that:</p>
+
+<p>M-x cider-connect</p>
+
+<p>It will ask for host and port. you can specify the host as localhost and port as 9001.
+If you want to change these, you can fiddle around in dev/user/core.clj.</p>
+
+<p>At this point, the repl should be connected and you should be greeted with the cider greeting.</p>
+
+<pre><code class="language-sh">;; Connected to nREPL server - nrepl://localhost:9001
+;; CIDER 0.22.0snapshot, nREPL 0.6.0
+;; Clojure 1.10.0, Java 10.0.2
+;;     Docs: (doc function-name)
+;;           (find-doc part-of-name)
+;;   Source: (source function-name)
+;;  Javadoc: (javadoc java-object-or-class)
+;;     Exit: &lt;C-c C-q&gt;
+;;  Results: Stored in vars *1, *2, *3, an exception in *e;
+;; ======================================================================
+;; If you’re new to CIDER it is highly recommended to go through its
+;; manual first. Type &lt;M-x cider-view-manual&gt; to view it.
+;; In case you’re seeing any warnings you should consult the manual’s
+;; &quot;Troubleshooting&quot; section.
+;;
+;; Here are few tips to get you started:
+;;
+;; * Press &lt;&lt;f1&gt; m&gt; to see a list of the keybindings available (this
+;;   will work in every Emacs buffer)
+;; * Press &lt;,&gt; to quickly invoke some REPL command
+;; * Press &lt;C-c C-z&gt; to switch between the REPL and a Clojure file
+;; * Press &lt;M-.&gt; to jump to the source of something (e.g. a var, a
+;;   Java method)
+;; * Press &lt;C-c C-d C-d&gt; to view the documentation for something (e.g.
+;;   a var, a Java method)
+;; * Enable ‘eldoc-mode’ to display function &amp; method signatures in the minibuffer.
+;; * Print CIDER’s refcard and keep it close to your keyboard.
+;;
+;; CIDER is super customizable - try &lt;M-x customize-group cider&gt; to
+;; get a feel for this. If you’re thirsty for knowledge you should try
+;; &lt;M-x cider-drink-a-sip&gt;.
+;;
+;; If you think you’ve encountered a bug (or have some suggestions for
+;; improvements) use &lt;M-x cider-report-bug&gt; to report it.
+;;
+;; Above all else - don’t panic! In case of an emergency - procure
+;; some (hard) cider and enjoy it responsibly!
+;;
+;; You can remove this message with the &lt;M-x cider-repl-clear-help-banner&gt; command.
+;; You can disable it from appearing on start by setting
+;; ‘cider-repl-display-help-banner’ to nil.
+;; ======================================================================
+user&gt; 
+</code></pre>
+
+<h3 id="playing-around">Playing around</h3>
+
+<p>Now open src/user/core.clj in your editor.</p>
+
+<p>Run C-k to load the file in repl.</p>
+
+<p>Place you cursor at this position:</p>
+
+<pre><code class="language-clojure">(ns clj-minimal-playground.core)
+
+;; function definition
+(defn plus [a]
+  (+ 1 2 a))
+
+#_(plus 12)█
+
+</code></pre>
+
+<p>Run C-x C-e, this should return 15. This command was to evaluate the preceeding form.
+You can also place your cursor anywhere and do C-c C-c to evaluate the top level form.</p>
+
+<h2 id="key-bindings">Key bindings:</h2>
+
+<p>Some of the keybindings (arising out of my emacs config) that I use often.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-x C-e</td>
+<td>Evaluate preceeding form</td>
+<td>cider</td>
+</tr>
+
+<tr>
+<td>C-c C-k</td>
+<td>Load current file in repl</td>
+<td>cider</td>
+</tr>
+
+<tr>
+<td>C-c C-c</td>
+<td>Evaluate top level form</td>
+<td>cider</td>
+</tr>
+
+<tr>
+<td>C-k</td>
+<td>insert parentheses</td>
+<td>init.el</td>
+</tr>
+
+<tr>
+<td>C-h</td>
+<td>git status and other git ops</td>
+<td>magit</td>
+</tr>
+
+<tr>
+<td>C-c pp</td>
+<td>Select project</td>
+<td>projectile</td>
+</tr>
+
+<tr>
+<td>C-c pf</td>
+<td>Select file in current project</td>
+<td>projectile</td>
+</tr>
+</tbody>
+</table>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://shakdwipeea.github.io/" >
+    &copy; 2019 Akash Shakdwipeea
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
